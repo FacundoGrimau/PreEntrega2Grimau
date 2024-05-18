@@ -1,30 +1,31 @@
 import { useEffect, useState } from "react";
 import arrayProductos from "./json/productos.json";
-import ItemList from "./ItemList";
+import ItemDetail from "./ItemDetail";
 
 // eslint-disable-next-line react/prop-types
-const ItemListContainer = () => {
-    const [items, setItems] = useState([]);
+const ItemDetailContainer = () => {
+    const [item, setItem] = useState([]);
 
     useEffect (() => {
         const promesa = new Promise(resolve => {
             setTimeout(() => {
-                resolve(arrayProductos);
+                const producto = arrayProductos.find(item => item.id == 1)
+                resolve(producto);
             }, 2000)
         });
 
         promesa.then(respuesta => {
-            setItems(respuesta);
+            setItem(respuesta);
         })
     }, [])
 
     return (
         <div className="container">
             <div className="row my-5">
-                    <ItemList items={items}/>
+                    <ItemDetail item={item}/>
             </div>
         </div>
     )
 }
 
-export default ItemListContainer;
+export default ItemDetailContainer;

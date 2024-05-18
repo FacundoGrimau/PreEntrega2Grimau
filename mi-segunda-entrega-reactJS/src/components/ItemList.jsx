@@ -1,6 +1,13 @@
+/* eslint-disable react/prop-types */
+import Item from "./Item"
+
 const ItemList = ({items}) => {
     return (
-        <h1>ItemList</h1>
+        <>
+            {items.map(produ => (
+                <Item key={produ} item={produ}/>
+            ))}
+        </>
     )
 }
 

@@ -1,3 +1,4 @@
+import { Link, NavLink } from "react-router-dom";
 import logo from "../assets/images/mi-logo.png";
 import CartWidget from "./CartWidget";
 
@@ -7,9 +8,9 @@ const NavBar = () => {
             <div className="row bg-warning-subtle p-3">
                 <div className="col"></div>   
                 <div className="col-md text-center">
-                    <a href="#">
+                    <Link to={"/"}>
                         <img src={logo} alt="mi-logo" width={200} />
-                    </a>
+                    </Link>
                 </div>
                 <div className="col d-flex align-items-center justify-content-end">
                     <CartWidget/>
@@ -19,22 +20,19 @@ const NavBar = () => {
                 <div className="col">
                     <ul className="nav justify-content-center">
                         <li className="nav-item">
-                            <a className="nav-link text-secondary text-uppercase textoNavbar" href="#">Home</a>
-                        </li>
-                        <li className="nav-item dropdown">
-                                <a className="nav-link text-secondary text-uppercase textoNavbar dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Productos</a>
-                                <ul className="dropdown-menu">
-                                    <li><a className="dropdown-item" href="#">Remeras</a></li>
-                                    <li><a className="dropdown-item" href="#">Pantalones</a></li>
-                                    <li><a className="dropdown-item" href="#">Buzos y Sweaters</a></li>
-                                    <li><a className="dropdown-item" href="#">Calzado</a></li>
-                                </ul>
+                            <NavLink className="nav-link text-secondary text-uppercase textoNavbar" to={"/"}>Home</NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-secondary text-uppercase textoNavbar" href="#" aria-disabled="true">Locales</a>
+                            <NavLink className="nav-link text-secondary text-uppercase textoNavbar" to={"/category/remeras"} aria-disabled="true">Remeras</NavLink>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link text-secondary text-uppercase textoNavbar" href="#" aria-disabled="true">Contacto</a>
+                            <NavLink className="nav-link text-secondary text-uppercase textoNavbar" to={"/category/pantalones"} aria-disabled="true">Pantalones</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link text-secondary text-uppercase textoNavbar" to={"/category/sweaters"} aria-disabled="true">Sweaters</NavLink>
+                        </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link text-secondary text-uppercase textoNavbar" to={"/category/calzados"} aria-disabled="true">Calzados</NavLink>
                         </li>
                     </ul>
                 </div>
