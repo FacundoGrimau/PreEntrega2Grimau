@@ -12,13 +12,13 @@ function App () {
     <BrowserRouter>
       <NavBar/>
       <Carousel/>
-      <Banner/>
       <Routes>
         <Route path={"/"} element={<ItemListContainer/>}/>
         <Route path={"/category/:id"} element={<ItemListContainer/>}/>
         <Route path={"/item/:id"} element={<ItemDetailContainer/>}/>
         <Route path={"*"} element={<Error404/>}/>
       </Routes>
+      <Banner/>
       <Footer/>
     </BrowserRouter>
   )

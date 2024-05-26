@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
 import arrayProductos from "./json/productos.json";
 import ItemDetail from "./ItemDetail";
+import { useParams } from "react-router-dom";
 
 // eslint-disable-next-line react/prop-types
 const ItemDetailContainer = () => {
     const [item, setItem] = useState([]);
+    const {id} = useParams();
 
     useEffect (() => {
         const promesa = new Promise(resolve => {
             setTimeout(() => {
-                const producto = arrayProductos.find(item => item.id == 1)
+                const producto = arrayProductos.find(item => item.id === parseInt(id))
                 resolve(producto);
             }, 2000)
         });
@@ -17,7 +19,7 @@ const ItemDetailContainer = () => {
         promesa.then(respuesta => {
             setItem(respuesta);
         })
-    }, [])
+    }, [id])
 
     return (
         <div className="container">

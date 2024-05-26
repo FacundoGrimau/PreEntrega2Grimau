@@ -31,18 +31,18 @@ const ItemCount = ({stock}) => {
 
     return (
         <div className="container">
-            <div className="row">
-                <div className="col">
+            <div className="row my-1">
+                <div className="col mx-1">
                     <div className="btn-group" role="group">
-                        <button type="button" className="btn bg-black text-white rounded-0" onClick={decrementar}> - </button>
-                        <button type="button" className="btn bg-black text-white rounded-0">{contador}</button>
-                        <button type="button" className="btn bg-black text-white rounded-0" onClick={incrementar}> + </button>
+                        <button type="button" className="btn bg-dark text-white border-white rounded-0" onClick={decrementar}> - </button>
+                        <button type="button" className="btn bg-dark text-white border-white rounded-0">{contador}</button>
+                        <button type="button" className="btn bg-dark text-white border-white rounded-0" onClick={incrementar}> + </button>
                     </div>
                 </div>
             </div>
             <div className="row my-1">
-                <div className="col">
-                    <button type="button" className="btn bg-black text-white text-uppercase rounded-0" onClick={onAdd}>Agregar Al Carrito</button>
+                <div className="col mx-1">
+                    <button type="button" className="btn btn-outline-dark text-uppercase rounded-0" onClick={onAdd}>Agregar Al Carrito</button>
                 </div>
             </div>
         </div>
